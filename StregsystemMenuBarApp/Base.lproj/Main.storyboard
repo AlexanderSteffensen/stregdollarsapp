@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,45 +674,80 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="StregsystemMenuBarApp" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
-            <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="250"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="StregsystemMenuBarApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="233" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0W-pu-UN3">
+                                <rect key="frame" x="13" y="72" width="207" height="32"/>
+                                <buttonCell key="cell" type="push" title="Update balance" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tLK-c2-abX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="updateBalance:" target="XfG-lQ-9wD" id="smo-hX-fUZ"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAm-n7-1Fv">
+                                <rect key="frame" x="17" y="21" width="129" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Classic beer" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Xzo-Ed-hC3" id="Goq-qi-EoD">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="FJ1-5I-UM4">
+                                        <items>
+                                            <menuItem title="Sportscola" keyEquivalent="1" id="VM6-pY-uWE"/>
+                                            <menuItem title="Classic beer" state="on" keyEquivalent="2" id="Xzo-Ed-hC3"/>
+                                            <menuItem title="Coffee" keyEquivalent="3" id="e9q-Ut-YKn"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="productChanged:" target="XfG-lQ-9wD" id="utD-o5-U6y"/>
+                                </connections>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-Qp-8nR">
+                                <rect key="frame" x="163" y="18" width="57" height="32"/>
+                                <buttonCell key="cell" type="push" title="Buy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oLK-4M-emW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buyProduct:" target="XfG-lQ-9wD" id="GRY-ug-cKe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fWt-Qp-8nR" secondAttribute="trailing" constant="27" id="1TR-NO-mr8"/>
+                            <constraint firstItem="fWt-Qp-8nR" firstAttribute="top" secondItem="r0W-pu-UN3" secondAttribute="bottom" constant="34" id="9Tc-uc-Ft3"/>
+                            <constraint firstItem="KAm-n7-1Fv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="BPf-U0-3q5"/>
+                            <constraint firstItem="KAm-n7-1Fv" firstAttribute="top" secondItem="r0W-pu-UN3" secondAttribute="bottom" constant="34" id="STU-Vi-WEO"/>
+                            <constraint firstItem="r0W-pu-UN3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="26" id="UlT-gL-bpV"/>
+                            <constraint firstItem="r0W-pu-UN3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="i7p-f2-fSf"/>
+                            <constraint firstAttribute="trailing" secondItem="r0W-pu-UN3" secondAttribute="trailing" constant="27" id="qI4-nc-jSv"/>
+                            <constraint firstAttribute="bottom" secondItem="KAm-n7-1Fv" secondAttribute="bottom" constant="176" id="qgp-VO-gdT"/>
+                            <constraint firstAttribute="bottom" secondItem="fWt-Qp-8nR" secondAttribute="bottom" constant="176" id="rcy-qC-6EU"/>
+                            <constraint firstItem="KAm-n7-1Fv" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="ro2-an-w7Y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buy" destination="fWt-Qp-8nR" id="vM2-Qg-uTB"/>
+                        <outlet property="product" destination="KAm-n7-1Fv" id="tvd-a3-8M0"/>
+                        <outlet property="update" destination="r0W-pu-UN3" id="xOd-kY-RCt"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="113.5" y="168.5"/>
         </scene>
     </scenes>
 </document>
