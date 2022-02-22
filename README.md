@@ -1,3 +1,9 @@
-# stregdollarsapp
+# stregdollars-app
 
-An IOS App that shows how many "stregdollars" you have on your account in the F-Club.
+An Mac-OS menu bar application for the Stregsystem at the F-Klub, this app can:
+
+- Show how many stregdollars you have
+- Buy Sportscola
+- Buy Coffee
+
+You can easily add functions yourself to buy other things! :)
