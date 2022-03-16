@@ -32,12 +32,11 @@ class StregsystemApp(object):
 
     def buy_sportscola(self):
         message = os.popen("sts -u " + self.config["username"] + " -i 1891").read()
-
-
-    def buy_coffee(self):
-        var = 2
-        print("HELLO")
-        # buys coffee
+        if message == "Noget gik galt 403":
+            rumps.notification(title=self.config["app_name"], subtitle=self.config["error_message"], message="")
+        else:
+            balance = os.popen("python3 ~/sts -u " + self.config["username"] + " -b").read()
+            self.app.title = balance.split()[1] + " $"
 
     def run(self):
         self.app.run()
